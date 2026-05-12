@@ -1,0 +1,139 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.video {
+  will-change: transform;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: brightness(0.78) contrast(1.05) saturate(1.1);
+  transform: scale(1.05);
+
+  transition: opacity 0.6s ease;
+
+  animation: videoFade 1.2s ease-in-out;
+}
+
+@keyframes videoFade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursorLight {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 500px;
+  height: 500px;
+
+  pointer-events: none;
+  z-index: 2;
+
+  background: radial-gradient(circle,
+      rgba(198, 165, 107, 0.25),
+      transparent 60%);
+
+  filter: blur(40px);
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s linear;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.55)),
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.75));
+}
+
+/* soft luxury glow */
+.glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+
+  background: radial-gradient(circle,
+      rgba(198, 165, 107, 0.18),
+      transparent 70%);
+
+  filter: blur(90px);
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* content stays same as before */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+.sub {
+  color: var(--color-gold);
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1;
+}
+
+.title span {
+  color: var(--color-gold);
+}
+
+.desc {
+  margin-top: 1.5rem;
+  color: var(--color-muted);
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primary {
+  background: var(--color-gold);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+}

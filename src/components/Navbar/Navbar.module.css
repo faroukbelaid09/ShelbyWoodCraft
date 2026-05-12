@@ -1,0 +1,153 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    padding: 1.6rem 0;
+
+    transition: all 0.3s ease;
+
+    background: transparent;
+}
+
+/* Scrolled state */
+body.scrolled .navbar {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+}
+
+/* layout */
+.inner {
+    width: min(1200px, calc(100% - 3rem));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* logo */
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 0.15em;
+    color: white;
+    text-decoration: none;
+    z-index: 1000000;
+    position: relative;
+}
+
+.logo span {
+    color: var(--color-gold);
+}
+
+/* nav */
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    transition: 0.25s;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--color-gold);
+}
+
+/* CTA */
+.cta {
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+
+    border: 1px solid rgba(198, 165, 107, 0.35);
+    background: rgba(198, 165, 107, 0.08);
+
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: var(--color-gold);
+    color: black;
+}
+
+/* mobile menu button - KEEP ABOVE OVERLAY */
+.menuButton {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1000000; /* Higher than mobile menu */
+    position: relative;
+    padding: 0.5rem;
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(8, 8, 8, 0.98);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+    z-index: 999999;
+}
+
+.mobileLink {
+    font-size: 1.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 0.5rem;
+}
+
+.mobileLink:hover {
+    color: var(--color-gold);
+    transform: scale(1.05);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+
+    .cta {
+        display: none;
+    }
+
+    .menuButton {
+        display: block;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}
